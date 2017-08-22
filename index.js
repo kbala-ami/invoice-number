@@ -1,6 +1,7 @@
 'use strict'
 
-function _next(cin){
+function _next(cin) {
+
     return alphaNumericIncrementer(cin);
 };
 
@@ -8,8 +9,8 @@ function alphaNumericIncrementer(val) {
     var isAlphaNumeric = true;
     var val = val.toUpperCase();
     var regex = new RegExp("^[a-zA-Z0-9_]*$");
-    if (val == null || val.length == 0) {
-        alert("Please enter an alphanumeric value");
+    if (val && val.length) {
+        throw new Error("Please enter an alphanumeric value");
     }
     if (!regex.test(val)) {
         alert("Please enter any alphanumeric value");
@@ -40,7 +41,7 @@ function alphaNumericIncrementer(val) {
 };
 
 var api = {
-    next:_next
+    next: _next
 };
 
 module.exports = api;
