@@ -4,7 +4,7 @@
   "description": "Generate invoice number sequentially",
   "main": "index.js",
   "scripts": {
-    "test": "standard && nsp check && tap --reporter=spec test/*.js"
+    "test": "standard --fix && nsp check && tap --reporter=spec test/*.js"
   },
   "repository": {
     "type": "git",

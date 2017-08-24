@@ -1,47 +1,48 @@
 'use strict'
 
-function _next(cin) {
-
-    return alphaNumericIncrementer(cin);
+function _next (cin) {
+  var invNumber = cin.toUpperCase()
+  var alphanumeric = new RegExp('^[a-zA-Z0-9\\_/:-;]*$')
+  if (!invNumber && !invNumber.length) {
+    throw new Error('Value is empty')
+  } else if (!alphanumeric.test(invNumber)) {
+    var index = invNumber.split(/[_/:\-;\\]+/)
+    var length = index.length
+    var invoice = index[length - 1]
+    return alphaNumericIncrementer(invoice)
+  } else {
+    throw new Error('Value contains non-alphanumeric value')
+  }
 };
 
-function alphaNumericIncrementer(val) {
-    var isAlphaNumeric = true;
-    var val = val.toUpperCase();
-    var regex = new RegExp("^[a-zA-Z0-9_]*$");
-    if (val && val.length) {
-        throw new Error("Please enter an alphanumeric value");
-    }
-    if (!regex.test(val)) {
-        alert("Please enter any alphanumeric value");
-        isAlphaNumeric = false;
-        document.getElementById("result").innerText = '';
-    }
-    else {
+function alphaNumericIncrementer (invoice) {
+  var invoiceNumber = invoice.toUpperCase()
+    // var alphanumeric = new RegExp('^[a-zA-Z0-9]*$');
+  var nonAlphaNumeric = new RegExp('^[~`!@#$%^&*()+={}[]|"\'<>?]*$')
 
-        var index = val.length - 1;
-        for (; index >= 0;) {
-            if (String.fromCharCode(val.charCodeAt(index)) == '9') {
-                val = val.substr(0, index) + '0' + val.substr(index + 1);
-            }
-            else if (String.fromCharCode(val.charCodeAt(index)) == 'Z') {
-                val = val.substr(0, index) + 'A' + val.substr(index + 1);
-            }
-            else {
-                var char = String.fromCharCode(val.charCodeAt(index) + 1);
-                val = val.substr(0, index) + char + val.substr(index + 1);
-                index = 0;
-            }
-            index = index - 1;
-        }
+  if (!invoiceNumber && !invoiceNumber.length) {
+    throw new Error('Value is empty')
+  } else {
+    var index = invoiceNumber.length - 1
+    for (; index >= 0;) {
+      if (invoiceNumber.substr(index, 1) === '9') {
+        invoiceNumber = invoiceNumber.substr(0, index) + '0' + invoiceNumber.substr(index + 1)
+      } else if (invoiceNumber.substr(index, 1) === 'Z') {
+        invoiceNumber = invoiceNumber.substr(0, index) + 'A' + invoiceNumber.substr(index + 1)
+      } else if (!nonAlphaNumeric.test(invoiceNumber.substr(index, 1))) {
+        var char = String.fromCharCode(invoiceNumber.charCodeAt(index) + 1)
+        invoiceNumber = invoiceNumber.substr(0, index) + char + invoiceNumber.substr(index + 1)
+        index = 0
+      }
+
+      index = index - 1
     }
-    if (isAlphaNumeric) {
-        document.getElementById("result").innerText = val;
-    }
+  }
+  return invoiceNumber
 };
 
 var api = {
-    next: _next
-};
+  next: _next
+}
 
-module.exports = api;
+module.exports = api
