@@ -1,34 +1,34 @@
 {
-  "name": "invoice-number",
-  "version": "1.0.0",
-  "description": "Generate invoice number sequentially",
-  "main": "index.js",
-  "scripts": {
-    "test": "standard --fix && nsp check && tap --reporter=spec test/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amindia/invoice-number.git"
-  },
-  "keywords": [
-    "invoice",
-    "number",
-    "incrementer",
-    "alphnumeric"
-  ],
-  "author": {
-    "name": "KBala",
-    "email": "kbala@adaptivemedia.in"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/amindia/invoice-number/issues"
-  },
-  "homepage": "https://github.com/amindia/invoice-number#readme",
-  "dependencies": {
-    "coveralls": "^2.13.1",
-    "nsp": "^2.7.0",
-    "standard": "^10.0.3",
-    "tap": "^10.7.2"
-  }
+    "name": "@amindia/invoice-number",
+    "version": "1.0.0",
+    "description": "Generate invoice number sequentially",
+    "main": "index.js",
+    "scripts": {
+        "test": "standard --fix && nsp check && tap --reporter=spec test/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amindia/invoice-number.git"
+    },
+    "keywords": [
+        "invoice",
+        "number",
+        "incrementer",
+        "alphnumeric"
+    ],
+    "author": {
+        "name": "KBala",
+        "email": "kbala@adaptivemedia.in"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/amindia/invoice-number/issues"
+    },
+    "homepage": "https://github.com/amindia/invoice-number#readme",
+    "devDependencies": {
+        "coveralls": "^2.13.1",
+        "nsp": "^2.7.0",
+        "standard": "^10.0.3",
+        "tap": "^10.7.2"
+    }
 }
