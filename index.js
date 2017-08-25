@@ -1,45 +1,34 @@
 'use strict'
 
-function _next (cin) {
-  var invNumber = cin.toUpperCase()
-  var alphanumeric = new RegExp('^[a-zA-Z0-9\\_/:-;]*$')
-  if (!invNumber && !invNumber.length) {
-    throw new Error('Value is empty')
-  } else if (!alphanumeric.test(invNumber)) {
-    var index = invNumber.split(/[_/:\-;\\]+/)
-    var length = index.length
-    var invoice = index[length - 1]
-    return alphaNumericIncrementer(invoice)
-  } else {
-    throw new Error('Value contains non-alphanumeric value')
-  }
-};
+function _next (invoiceNumber) {
+  if (!invoiceNumber) throw new Error('invoiceNumber cannot be empty')
+  var array = invoiceNumber.split(/[_/:\-;\\]+/)
+  var lastSegment = array.pop()
+  var priorSegment = invoiceNumber.substr(0, invoiceNumber.indexOf(lastSegment))
+  var nextNumber = alphaNumericIncrementer(lastSegment)
+  return priorSegment + nextNumber
+}
 
-function alphaNumericIncrementer (invoice) {
-  var invoiceNumber = invoice.toUpperCase()
-    // var alphanumeric = new RegExp('^[a-zA-Z0-9]*$');
-  var nonAlphaNumeric = new RegExp('^[~`!@#$%^&*()+={}[]|"\'<>?]*$')
-
-  if (!invoiceNumber && !invoiceNumber.length) {
-    throw new Error('Value is empty')
-  } else {
-    var index = invoiceNumber.length - 1
-    for (; index >= 0;) {
-      if (invoiceNumber.substr(index, 1) === '9') {
-        invoiceNumber = invoiceNumber.substr(0, index) + '0' + invoiceNumber.substr(index + 1)
-      } else if (invoiceNumber.substr(index, 1) === 'Z') {
-        invoiceNumber = invoiceNumber.substr(0, index) + 'A' + invoiceNumber.substr(index + 1)
-      } else if (!nonAlphaNumeric.test(invoiceNumber.substr(index, 1))) {
-        var char = String.fromCharCode(invoiceNumber.charCodeAt(index) + 1)
-        invoiceNumber = invoiceNumber.substr(0, index) + char + invoiceNumber.substr(index + 1)
+function alphaNumericIncrementer (str) {
+  if (str) {
+    var invNum = str.replace(/([^a-z0-9]+)/gi, '')
+    invNum = invNum.toUpperCase()
+    var index = invNum.length - 1
+    while (index >= 0) {
+      if (invNum.substr(index, 1) === '9') {
+        invNum = invNum.substr(0, index) + '0' + invNum.substr(index + 1)
+      } else if (invNum.substr(index, 1) === 'Z') {
+        invNum = invNum.substr(0, index) + 'A' + invNum.substr(index + 1)
+      } else {
+        var char = String.fromCharCode(invNum.charCodeAt(index) + 1)
+        invNum = invNum.substr(0, index) + char + invNum.substr(index + 1)
         index = 0
       }
-
-      index = index - 1
+      index--
     }
+    return invNum
   }
-  return invoiceNumber
-};
+}
 
 var api = {
   next: _next
