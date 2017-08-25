@@ -1,5 +1,5 @@
 {
-    "name": "@amindia/invoice-number",
+    "name": "invoice-number",
     "version": "1.0.0",
     "description": "Generate invoice number sequentially",
     "main": "index.js",
