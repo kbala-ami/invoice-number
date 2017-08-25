@@ -10,7 +10,7 @@ function _next (invoiceNumber) {
 }
 
 function alphaNumericIncrementer (str) {
-  if (str) {
+  if (str && str.length > 0) {
     var invNum = str.replace(/([^a-z0-9]+)/gi, '')
     invNum = invNum.toUpperCase()
     var index = invNum.length - 1
