@@ -1,4 +1,5 @@
 ![Build Status](https://travis-ci.org/amindia/invoice-number.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/amindia/invoice-number/badge.svg?branch=master)](https://coveralls.io/github/amindia/invoice-number?branch=master)
 
 # invoice-number
 Node.js module to generate invoice number sequentially 
