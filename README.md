@@ -14,9 +14,14 @@ $ npm install invoice-number
 
 ```javascript
 var invNum = require('invoice-number')
-var result = invNum.next('2017/08/ABC001')
 
-console.log(result)
-
+invNum.next('2017/08/ABC001')
 // => 2017/08/ABC002
+
+invNum.next('xjsiwe234njshd6')
+// => XJSIWE234NJSHD7
+
+invNum.next('899ZZZ9')
+// => 900AAA0
+
 ```
