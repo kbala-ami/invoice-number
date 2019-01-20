@@ -4,7 +4,7 @@
     "description": "Generate invoice number sequentially",
     "main": "index.js",
     "scripts": {
-        "test": "standard --fix && nsp check && tap --reporter=spec test/*.js",
+        "test": "standard --fix && tap --reporter=spec test/*.js",
         "coverage": "tap test/*.js --coverage",
         "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
         "standard-fix": "standard --fix"
@@ -30,7 +30,6 @@
     "homepage": "https://github.com/amindia/invoice-number#readme",
     "devDependencies": {
         "coveralls": "^3.0.2",
-        "nsp": "^3.2.1",
         "standard": "^12.0.1",
         "tap": "^12.1.1"
     }
