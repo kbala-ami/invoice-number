@@ -1,6 +1,6 @@
 {
     "name": "invoice-number",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Generate invoice number sequentially",
     "main": "index.js",
     "scripts": {
@@ -29,9 +29,9 @@
     },
     "homepage": "https://github.com/amindia/invoice-number#readme",
     "devDependencies": {
-        "coveralls": "^2.13.1",
-        "nsp": "^2.7.0",
-        "standard": "^10.0.3",
-        "tap": "^10.7.2"
+        "coveralls": "^3.0.2",
+        "nsp": "^3.2.1",
+        "standard": "^12.0.1",
+        "tap": "^12.1.1"
     }
 }
