@@ -1,36 +1,36 @@
 {
-    "name": "invoice-number",
-    "version": "1.0.5",
-    "description": "Generate invoice number sequentially",
-    "main": "index.js",
-    "scripts": {
-        "test": "standard --fix && tap --reporter=spec test/*.js",
-        "coverage": "tap test/*.js --coverage",
-        "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
-        "standard-fix": "standard --fix"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/amindia/invoice-number.git"
-    },
-    "keywords": [
-        "invoice",
-        "number",
-        "incrementer",
-        "alphnumeric"
-    ],
-    "author": {
-        "name": "KBala",
-        "email": "kbala@adaptivemedia.in"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/amindia/invoice-number/issues"
-    },
-    "homepage": "https://github.com/amindia/invoice-number#readme",
-    "devDependencies": {
-        "coveralls": "^3.0.2",
-        "standard": "^12.0.1",
-        "tap": "^12.1.1"
-    }
+  "name": "invoice-number",
+  "version": "1.0.5",
+  "description": "Generate invoice number sequentially",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix && tap --reporter=spec test/*.js",
+    "coverage": "tap test/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
+    "standard-fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amindia/invoice-number.git"
+  },
+  "keywords": [
+    "invoice",
+    "number",
+    "incrementer",
+    "alphnumeric"
+  ],
+  "author": "KBala <kbala@adaptivemedia.in>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amindia/invoice-number/issues"
+  },
+  "homepage": "https://github.com/amindia/invoice-number#readme",
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "standard": "^12.0.1",
+    "tap": "^12.1.1"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
