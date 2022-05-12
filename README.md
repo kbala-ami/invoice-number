@@ -24,4 +24,5 @@ invNum.next('xjsiwe234njshd6')
 invNum.next('899ZZZ9')
 // => 900AAA0
 
+//Test
 ```
