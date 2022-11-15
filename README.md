@@ -12,16 +12,16 @@ $ npm install invoice-number
 ```
 ## Usage
 
-```javascript
-var invNum = require('invoice-number')
+```typescript
+import { InvoiceNumber } from 'invoice-number'
 
-invNum.next('2017/08/ABC001')
+InvoiceNumber.next('2017/08/ABC001')
 // => 2017/08/ABC002
 
-invNum.next('xjsiwe234njshd6')
+InvoiceNumber.next('xjsiwe234njshd6')
 // => XJSIWE234NJSHD7
 
-invNum.next('899ZZZ9')
+InvoiceNumber.next('899ZZZ9')
 // => 900AAA0
 
 ```
