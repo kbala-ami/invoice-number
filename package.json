@@ -19,7 +19,7 @@
     "package": "npm run build && npm pack",
     "test": "jest --no-cache --runInBand",
     "test:cov": "jest --coverage --no-cache --runInBand",
-    "addscope": "node tools/packagejson name @amindia/invoice-number"
+    "addscope": "node tools/packagejson name invoice-number"
   },
   "publishConfig": {
     "access": "public"
